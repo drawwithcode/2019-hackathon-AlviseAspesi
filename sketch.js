@@ -1,11 +1,7 @@
 var mySong;
-var copie = [];
 var amp;
-var playButton;
-var restartButton;
 
-
-function preload(){
+function preload() {
   font = loadFont("./assets/gt-walsheim-bold.ttf");
   mySong = loadSound("./assets/TG1_bumper.mp3");
   logo = loadImage("./assets/tg1.png");
@@ -33,7 +29,7 @@ function draw() {
   image(trumpp, windowWidth / 2 - 510, windowHeight / 2 - 20, 706 / 2.5, 672 / 2.5);
 
   imageMode(CENTER);
-  image(trumpet, windowWidth / 2 - 180, windowHeight / 2 + 20, 640 / 1.5 , 210 / 1.5 );
+  image(trumpet, windowWidth / 2 - 180, windowHeight / 2 + 20, 640 / 1.5, 210 / 1.5);
 
   rectMode(CENTER);
   noStroke();
@@ -46,52 +42,28 @@ function draw() {
   textSize(10);
   fill(color("white"));
   textFont(font);
-  text("play/pause", windowWidth / 3, windowHeight  - 102);
+  text("play/pause", windowWidth / 3, windowHeight - 102);
 
   textAlign(CENTER, CENTER);
   textSize(10);
   fill(color("white"));
   textFont(font);
-  text("refresh", 2 * (windowWidth / 3), windowHeight  - 102);
+  text("refresh", 2 * (windowWidth / 3), windowHeight - 102);
 }
 
 
-
-
-// function rB() {
-//   this.xr = 2 * (width / 3);
-//   this.yr = height - 100;
-//   this.dw = 90;
-//   this.dh = 30;
-//   this.colorr = color("#37123C");
-//
-//   this.display = function() {
-//     rectMode(CENTER);
-//     noStroke();
-//     fill(this.colorr);
-//     rect(this.xr, this.yr, this.dw, this.dh);
-//   }
-//
-//   this.restart = function() {
-//     var d = dist(mouseX, mouseY, this.xr, this.yr);
-//     if (d < this.dw && d < this.dh) {
-//       document.location.reload();
-//     }
-//   }
-// }
-
 function mousePressed() {
-  if (mouseX > windowWidth / 3 - 45 && mouseX < windowWidth / 3 + 45 && mouseY > windowHeight - 115 && mouseY < windowHeight - 85){
+  if (mouseX > windowWidth / 3 - 45 && mouseX < windowWidth / 3 + 45 && mouseY > windowHeight - 115 && mouseY < windowHeight - 85) {
     if (!mySong.isPlaying()) {
       mySong.play();
     } else {
       mySong.pause();
     }
-  } else if(mouseX > 2 * (width / 3) - 45 && mouseX < 2 * (width / 3) + 45 && mouseY > windowHeight - 115 && mouseY < windowHeight - 85){
+  } else if (mouseX > 2 * (width / 3) - 45 && mouseX < 2 * (width / 3) + 45 && mouseY > windowHeight - 115 && mouseY < windowHeight - 85) {
     document.location.reload();
   }
 }
 
 function windowResized() {
-	resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth, windowHeight);
 }
